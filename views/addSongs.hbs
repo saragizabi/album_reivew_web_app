@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+<header>
+    <div class="header-container">
+        <div class="left-section">
+            <h1>Album Review App</h1>
+        </div>
+        <div class="right-section">
+            <a href="/logout"><button class="logout-btn">Logout</button></a>
+        </div>
+    </div>
+</header>
+
+<!-- nav bar (better than j buttons?) -->
+<div class="navbar">
+    <a href="/myalbums">My Reviews</a>
+    <a href="/albums/new">Add Review</a>
+    <a href="/albums">All Reviews</a>
+</div>
+
+<div class="container">
+    <h2>Add Songs to "{{album.title}}" by {{album.artist}}</h2>
+
+    {{#if error}}
+        <div class="error">{{error}}</div>
+    {{/if}}
+
+    <form id="add-songs-form" action="/albums/{{album._id}}/add-songs" method="POST">
+        <div id="songs-container">
+            <div class="song-entry">
+                <div class="form-group">
+                    <label for="title">Song Title:</label>
+                    <input type="text" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating (1-10):</label>
+                    <input type="number" name="rating" min="1" max="10" required>
+                </div>
+            </div>
+        </div>
+        <button type="button" id="add-more-btn">Add Another Song</button>
+        <br>
+        <button type="submit">Save Songs</button>
+    </form>
+
+    <div class="back-link">
+        <a href="/albums/{{album._id}}">Back to Album Details</a>
+    </div>
+</div>
+
+<!-- adding section to html when button click 
+looked at stack, need to insert more html (DOM manipulation)
+https://stackoverflow.com/questions/64930946/how-to-add-a-group-of-html-elements-by-a-button-click -->
+<script>
+    document.getElementById('add-more-btn').addEventListener('click', function() {
+        const container = document.getElementById('songs-container');
+        const newSongEntry = document.createElement('div');
+        newSongEntry.className = 'song-entry';
+        newSongEntry.innerHTML = `
+            <div class="form-group">
+                <label for="title">Song Title:</label>
+                <input type="text" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating (1-10):</label>
+                <input type="number" name="rating" min="1" max="10" required>
+            </div>
+            <button type="button" class="remove-song-btn">Remove</button>
+        `;
+        container.appendChild(newSongEntry);
+
+        // Add event listener to the remove button
+        newSongEntry.querySelector('.remove-song-btn').addEventListener('click', function() {
+            container.removeChild(newSongEntry);
+        });
+    });
+</script>

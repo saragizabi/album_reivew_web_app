@@ -1,0 +1,26 @@
+<h1>Add a New Album Review</h1>
+<form action="/albums/new" method="POST">
+    <div>
+        <label>Album Title:</label>
+        <input type="text" id="title" name="title" required>
+    </div>
+
+    <div>
+        <label>Artist:</label>
+        <input type="text" id="artist" name="artist" required>
+    </div>
+
+    <div>
+        <label>Genre:</label>
+        <input type="text" id="genre" name="genre" required>
+    </div>
+
+    <div>
+        <label>Your Review:</label>
+        <textarea id="description" name="description"></textarea>
+    </div>
+
+    <button type="submit">Submit Review</button>
+</form>
+<br>
+<a href="/albums"><button>Back to Album Reviews</button></a>

@@ -1,0 +1,402 @@
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: #beb0e6;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #5b40a8;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.header-container {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+header a button {
+    padding: 8px 10px;
+    background-color: #d85c5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+header a button:hover {
+    background-color: #a64545;
+}
+
+.nav-buttons {
+    margin-top: 1em;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    background: white;
+    padding: 15px 10px;
+    margin: 20px auto;
+    width: 35%;
+    border-radius: 8px;
+}
+
+button {
+    padding: 8px 10px;
+    background-color: #59a75c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #367039;
+}
+
+/* navbar code from old portfolio website*/
+.navbar {
+    display: flex;
+    background-color: #9886e7;
+  }
+
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .navbar a:hover {
+    background-color: #D0ABE7;
+    color: black;
+  }
+  
+  .navbar a:active {
+    background-color: #f6c6ff;
+    color: #834444;
+  }
+  
+/* add new css stuff */
+.song-entry {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.remove-song-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.remove-song-btn:hover {
+    background-color: #8b2323;
+}
+
+#add-more-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#add-more-btn:hover {
+    background-color: #27702a;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* add form like design */
+.container {
+    max-width: 620px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+.album-header {
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.album-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.album-header h3 {
+    margin: 5px 0 0;
+    color: #666;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.description h3 {
+    margin-top: 0;
+    color: #444;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.songs-section h3 {
+    margin-top: 0;
+    color: #444;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.songs-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.songs-list li {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.songs-list li:last-child {
+    border-bottom: none;
+}
+
+.song-title {
+    font-weight: bold;
+    flex-grow: 1;
+    padding-right: 150px;
+    font-size: 1.05em;
+}
+
+.song-rating {
+    color: #666;
+    background-color: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.9em;
+    min-width: 55px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.owner-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.add-songs-btn {
+    background-color: #519653;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-songs-btn:hover {
+    background-color: #305c32;
+}
+
+.delete-album-btn {
+    background-color: #d85c5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-album-btn:hover {
+    background-color: #a64545;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #7322cf;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    border-left: 4px solid #c62828;
+}
+
+/* album details styling */
+  
+.album-header {
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.album-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.album-header h3 {
+    margin: 5px 0 0;
+    color: #666;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.album-info, 
+.description, 
+.songs-section {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* comments styling --- */
+.comments-section {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  
+  .comments-section h3 {
+    margin-bottom: 15px;
+    text-decoration-line: underline;
+  }
+  
+  .comments-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .comment {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    width: 75%;
+  }
+  
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+  }
+  
+  .comment-user {
+    font-weight: bold;
+    color: #6e10b7;
+  }
+  
+  .comment-date {
+    color: #777;
+  }
+  
+  .comment-text {
+    text-align: left;
+  }
+  
+  .comment-form {
+    margin-top: 30px;
+  }
+  
+  .comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .comment-form button {
+    background-color: #8649b4;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .comment-form button:hover {
+    background-color: #571a85;
+  }
+  

@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+<header>
+   <div class="header-container">
+        <div class="left-section">
+            <h1>Album Review App</h1>
+        </div>
+        <div class="right-section">
+            <p class="username">Welcome, <strong>{{username}}</strong>!</p>
+            <a href="/logout"><button class="logout-btn">Logout</button></a>
+        </div>
+    </div>
+</header>
+
+<!-- nav bar (better than j buttons?) -->
+<div class="navbar">
+    <a href="/myalbums"> My Reviews </a>
+    <a href="/albums/new"> Add Review</a>
+    <a href="/albums"> All Reviews </a>
+</div>
+
+<h2>All Reviews:</h2>
+
+{{#if albums.length}}
+    <ul>
+        {{#each albums}}
+            <li>
+                <strong>{{title}}</strong> by <i>{{artist}}</i>
+                <br>
+                Reviewed by: {{user.username}}
+                <br> 
+                <a href="/albums/{{_id}}">View Details</a>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>No album reviews yet.</p>
+{{/if}}
+

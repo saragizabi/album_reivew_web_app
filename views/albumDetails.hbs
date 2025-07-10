@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+<header>
+    <div class="header-container">
+        <div class="left-section">
+            <h1>Album Review App</h1>
+        </div>
+        <div class="right-section">
+            <a href="/logout"><button class="logout-btn">Logout</button></a>
+        </div>
+    </div>
+</header>
+
+<div class="navbar">
+    <a href="/myalbums">My Reviews</a>
+    <a href="/albums/new">Add Review</a>
+    <a href="/albums">All Reviews</a>
+</div>
+
+<div class="container">
+    <div class="album-header">
+        <h2>{{album.title}}</h2>
+        <h3>by {{album.artist}}</h3>
+    </div>
+
+    <div class="album-info">
+        <p><strong>Genre:</strong> {{album.genre}}</p>
+        <p><strong>Reviewed by:</strong> {{album.user.username}}</p>
+    </div>
+
+    {{#if album.description}}
+        <div class="description">
+            <h3>Review:</h3>
+            <p>{{album.description}}</p>
+        </div>
+    {{/if}}
+
+    <div class="songs-section">
+        <h3>Songs:</h3>
+        {{#if album.songs.length}}
+            <ul class="songs-list">
+                {{#each album.songs}}
+                    <li>
+                        <div class="song-title">{{this.title}}</div>
+                        <div class="song-rating">{{this.rating}}/10</div>
+                    </li>
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>No songs added yet.</p>
+        {{/if}}
+
+        <!-- add a div to seperate the comments section -->
+        </div>
+
+        <!-- add songs button if current user is the album owner -->
+        {{#if isOwner}}
+            <a href="/albums/{{album._id}}/add-songs"><button class="add-songs-btn" >Add Songs</button></a>
+            
+            <!-- add delete button to get rid of album review -->
+            <form action="/albums/{{album._id}}/delete" method="POST" style="display: inline;">
+                <button type="submit" class="delete-album-btn">Delete Album</button>
+            </form>
+        {{/if}}
+    </div>
+
+    <!-- area to display comments -->
+    <div id="comments-container" data-album-id="{{album._id}}"></div>
+
+    <!-- 
+    script for babel 
+    following this guide for webpack
+    https://medium.com/@raazthemystery273/setting-up-a-react-app-from-scratch-with-webpack-and-babel-fb1add2d5830
+    -->    
+    <script defer src="/dist/bundle.js"></script>
+
+    <div class="back-link">
+        <a href="/albums">Back to All Albums</a>
+    </div>
+
+    {{#if error}}
+        <div class="error">{{error}}</div>
+    {{/if}}
+</div>
